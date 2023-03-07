@@ -4,77 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SMARA Cancer Support Group for patients and families in South Trinidad">
-    <meta name="keywords" content="SMARA, cancer, Trinidad, support group, South Trinidad">
+    <meta name="description" content="Who said it quiz">
+    <meta name="keywords" content="quiz, celebrity quotes, trivia">
+
+    <!-- Google fonts and font awesome-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antic&family=Bangers&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://kit.fontawesome.com/2a1b2bada9.css" crossorigin="anonymous"> -->
+    <script src="https://kit.fontawesome.com/2a1b2bada9.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>SMARA Cancer Support Group</title>
+    <link rel="shortcut icon" href="#">
+    <title>Who said it quiz</title>
 </head>
 <body>
-    <header>
-        <a href="index.html">
-            <h1 id="logo"><i class="fa-solid fa-ribbon"></i> SMARA Cancer Support Group</h1>
-        </a>
-        <nav>
-            <ul id="menu">
-                <li>
-                    <a href="index.html" class="active">Home</a>
-                </li>
-                <li>
-                    <a href="about.html">About Us</a>
-                </li>
-                <li>
-                    <a href="#">Events</a>
-                </li>
-                <li>
-                    <a href="#">Resources</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <section>
-        <div id="hero-image"></div>
-        <div id="hero-text">
-            <h2>Supporting South Trinidad patients & families throughout their cancer journey</h2>
-            <h3>Counsel, Educate, Uplift, Support</h3>
-        </div>
-    </section>
-    <section class="services">
-        <div>
-            <h2>Patient Navigation<br><i class="fa-regular fa-compass"></i></h2>
-            <p>We can help to make sense of the treatment pathway for your individual needs, making sure you have access to everything you need, at the right time, throughout your cancer journey (for free)</p>
-        </div>
-        <div>
-            <h2>Financial Assistance<br><i class="fa-solid fa-dollar-sign"></i></h2>
-            <p>We can help with taxi & bus fares - so you never have to worry about missing appointments due to financial stress</p>
-        </div>
-        <div>
-            <h2>Counselling<br><i class="fa-solid fa-brain"></i></h2>
-            <p>Free counselling services available for anyone affected by cancer - available for patients and family members at any stage during your cancer journey</p>
-        </div>
-    </section>
-    <Footer>
-        <div class="footer">
-            <ul>
-                <li>
-                    <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Visit us on Facebook (opens in a new tab)">
-                    <i class="fa-brands fa-facebook"></i></a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Visit us on Instagram (opens in a new tab)">
-                    <i class="fa-brands fa-instagram"></i></a>
-                </li>
-                <li><a href="https://smctt.com" target="_blank" rel="noopener" aria-label="Visit our home base, at Southern Medical Clinic (opens in a new tab)">
-                    <i class="fa-solid fa-house-medical"></i></a>
-                </li>
-            </ul>
-        </div>
-    </Footer>
+     <!-- Heading section-->
+     <section>
+        <h1>Who said it?</h1>
+     </section>
     
-    <!-- font awesome script-->
-    <script src="https://kit.fontawesome.com/2a1b2bada9.js" crossorigin="anonymous"></script>
+    <!-- Home page-->
+    <section id="home-display" class="home">
+         <div class="intro-box">
+            <p>Got some time to kill?</p>
+            <p>Want to prove your superior knowledge of the crazy things celebrities have said?</p>
+            <p>... Well, you've come to the right place!</p>
+         </div>
+         <div>
+            <button type="button" id="lets-play" class="play-button" data-type="play">
+                  Let's play!
+            </button>
+         </div>
+    </section>
+
+     <!-- Questions section-->
+     <section id="game-display" class="game">
+         <div class="score-tracker">
+            <div>score tracker goes here</div>
+         </div>
+         <div class="question-box">
+            question goes here, this is a quite long funny question right here
+         </div>
+         <div class="options-container">
+            <span class="question-option">test</span>
+            <span class="question-option">test</span>
+            <span class="question-option">test</span>
+            <span class="question-option">test</span>
+         </div>
+         <div>
+            <button class="next-button" data-type="next">next question</button>
+         </div>
+      </section>    
+   
+    <!-- Final page - scores, ?play again-->
+    <section class="end-page">
+        
+    </section>
+
+    <script src="assets/js/script.js"></script>   
+    
 </body>
 </html>
