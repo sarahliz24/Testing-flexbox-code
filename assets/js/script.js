@@ -9,13 +9,14 @@ const game = document.getElementsByClassName("game");
 const endPage = document.getElementsByClassName("end-page");
 const homeDisplay = document.getElementById("home-display");
 const gameDisplay = document.getElementById("game-display");
+//const theQuestion = document.getElementByI("theQuestion");
 //const options = Array.from(document.querySelectorAll('option'))
 
 let next;
 let currentQuestion = {};
 let questionCounter = 0;
 let availableQuestions = [];
-let acceptingAnswers;
+//let acceptingAnswers = false;
 const maxQuestions = 3;
 let score =0;
 
@@ -37,7 +38,7 @@ let questionsArray = [{
     answer: "2",
 },
 {
-    question: "Get at least eight hours of beauty sleep, nine if you’re ugly",
+    question: "Get at least eight hours of beauty sleep, nine if you are ugly",
     option1: "Christina Aguilera",
     option2: "Tara Reid",
     option3: "Marilyn Monroe",
@@ -58,35 +59,36 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 let startGame = () => {
-    questionCounter = 0;
+    //questionCounter = 0;
     //document.questionOption.innerHTML = questions[currentQuestion].question;
-    score = 0;
+    //score = 0;
     availableQuestions = [...questionsArray];
-    console.log(availableQuestions);
     getQuestion();
 }
 
 let getQuestion = () => {
-    if (availableQuestions.length === 0 || questionCounter >= maxQuestions) {
-        localStorage.setItem('mostRecentScore', score)
+    //if (availableQuestions.length === 0 || questionCounter >= maxQuestions) {
+       // localStorage.setItem('mostRecentScore', score)
 
-        return window.location.assign('about.html')
-    }
+       // return window.location.assign('about.html')
+   // }
 
-    //questionCounter = ++
+    //questionCounter++
 
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
-    questionBox.innerHMTL = currentQuestion.question;
+    
+    questionBox.outerText = currentQuestion.question;
+    console.log(questionBox);
 
     answerOption.forEach((option) => {
         const number = option.dataset["number"];
         option.innerText = currentQuestion['option' + number];
     })
 
-    availableQuestions.splice(questionIndex, 1);
+    //availableQuestions.splice(questionIndex, 1);
 
-    acceptingAnswers = true;
+    // acceptingAnswers = true;
 }
 
 startGame();
