@@ -9,6 +9,9 @@ const game = document.getElementsByClassName("game");
 const endPage = document.getElementsByClassName("end-page");
 const homeDisplay = document.getElementById("home-display");
 const gameDisplay = document.getElementById("game-display");
+let userAnswer = document.getElementsByTagName("span");
+let correctAnswer = document.getElementsByClassName("correct-answer");
+let wrongAnswer = document.getElementsByClassName("wrong-answer");
 //const theQuestion = document.getElementByI("theQuestion");
 //const options = Array.from(document.querySelectorAll('option'))
 
@@ -64,6 +67,8 @@ let startGame = () => {
     //score = 0;
     availableQuestions = [...questionsArray];
     getQuestion();
+    checkAnswer ();
+    showAnswer ();
 }
 
 let getQuestion = () => {
@@ -79,7 +84,7 @@ let getQuestion = () => {
     currentQuestion = availableQuestions[questionIndex];
     
     questionBox.innerText = currentQuestion.question;
-    console.log(questionBox);
+    //console.log(questionBox);
 
     answerOption.forEach((option) => {
         const number = option.dataset["number"];
@@ -89,6 +94,26 @@ let getQuestion = () => {
     //availableQuestions.splice(questionIndex, 1);
 
     // acceptingAnswers = true;
+}
+
+let checkAnswer = () => {
+    let userAnswer = document.getElementsByTagName("span");
+
+    for (i = 0; i < userAnswer.length; i++) {
+        userAnswer[i].onclick = showAnswer;
+    }
+}
+
+let answer = currentQuestion.answer;
+
+let showAnswer = () => {
+   // let answer = currentQuestion.answer;
+
+    if (userAnswer == answer) {
+        answerOption.classList.add("correct-answer");
+    } else {
+        answerOption.classList.add("wrong-answer");
+    }
 }
 
 startGame();

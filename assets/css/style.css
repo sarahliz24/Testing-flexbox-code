@@ -88,6 +88,16 @@ h1 {
     margin: 5%;
 }
 
+.correct-answer {
+    background-color: green;
+    border-width: 1.5rem;
+}
+
+.wrong-answer {
+    border-color: #df2935;
+    border-width: 1.5rem;
+}
+
 /*  Style next-button*/
 .next-button {
     text-align: center;
