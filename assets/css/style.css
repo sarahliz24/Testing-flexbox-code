@@ -51,7 +51,7 @@ h1 {
 }
 
 /*  Question box style*/
-.question-box {
+#question-box {
     border: solid #e6e8e6 3px;
     border-radius: 15px;
     /* converted #fdca40 to rgba to allow setting of opacity; 
