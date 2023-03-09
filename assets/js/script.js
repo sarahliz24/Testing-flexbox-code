@@ -18,37 +18,10 @@ let wrongAnswer = document.getElementsByClassName("wrong-answer");
 let next;
 let currentQuestion = {};
 let questionCounter = 0;
-let availableQuestions = [];
+let availableQuestions = [...questionsArray];
 //let acceptingAnswers = false;
 const maxQuestions = 3;
 let score =0;
-
-/* Questions array */
-let questionsArray = [{
-    question: "Movie acting suits me because I only need to be good for 90 seconds at a time",
-    option1: "Ryan Reynolds",
-    option2: "Angelina Jolie",
-    option3: "Bill Murray",
-    option4: "Arnold Schwarzenegger",
-    answer: "3",
-},
-{
-    question: "Being a father is the single greatest feeling on earth. Not including those wonderful years I spent without a child, of course",
-    option1: "Zach Galifianakis",
-    option2: "Ryan Reynolds",
-    option3: "Bill Murray",
-    option4: "Arnold Schwarzenegger",
-    answer: "2",
-},
-{
-    question: "Get at least eight hours of beauty sleep, nine if you are ugly",
-    option1: "Christina Aguilera",
-    option2: "Tara Reid",
-    option3: "Marilyn Monroe",
-    option4: "Betty White",
-    answer: "4",
-},
-]
 
 /* Displays and hides sections as advancing through gameplay via button clicks*/
 letsPlay.addEventListener("click", () => {
@@ -65,11 +38,26 @@ let startGame = () => {
     //questionCounter = 0;
     //document.questionOption.innerHTML = questions[currentQuestion].question;
     //score = 0;
-    availableQuestions = [...questionsArray];
+
+    /* shuffles question array and selects 10 questions 
+    function availableQuestions (questionsArray, 25) {
+       let shuffledQuestions = [...questionsArray].sort(() => 0.5 - Math.random());
+       //let number = questionsArray.length - 15;
+       return shuffledQuestions.slice(0, 10);
+    } */
+
+   // availableQuestions.sort((a, b) => 0.5 - Math.random());  //sorts questions array copy into random order ?repeated below??
     getQuestion();
-    checkAnswer ();
-    showAnswer ();
+   // checkAnswer ();
+   // showAnswer ();
 }
+
+
+/*function getMultipleRandom(arr, num) {
+    const shuffled = [...arr].sort(() => 0.5 - Math.random());
+  
+    return shuffled.slice(0, num);
+  } */
 
 let getQuestion = () => {
     //if (availableQuestions.length === 0 || questionCounter >= maxQuestions) {
@@ -80,8 +68,8 @@ let getQuestion = () => {
 
     //questionCounter++
 
-    const questionIndex = Math.floor(Math.random() * availableQuestions.length);
-    currentQuestion = availableQuestions[questionIndex];
+    const questionIndex = Math.floor(Math.random() * availableQuestions.length); //sorts questions array copy into random order?
+    currentQuestion = availableQuestions[questionIndex]; //places randomised question into the current question?
     
     questionBox.innerText = currentQuestion.question;
     //console.log(questionBox);
@@ -96,15 +84,19 @@ let getQuestion = () => {
     // acceptingAnswers = true;
 }
 
-let checkAnswer = () => {
-    let userAnswer = document.getElementsByTagName("span");
+/* Turns answer box 3 background colour red*/
+//code from https://www.w3schools.com/jsref/met_element_getelementsbytagname.asp
+const spanDiv = document.getElementById("spanDiv");
+    spanDiv.getElementsByTagName("*")[2].style.backgroundColor = "red";
+
+/* let checkAnswer = () => {
 
     for (i = 0; i < userAnswer.length; i++) {
         userAnswer[i].onclick = showAnswer;
     }
 }
 
-let answer = currentQuestion.answer;
+const answer = currentQuestion.answer;
 
 let showAnswer = () => {
    // let answer = currentQuestion.answer;
@@ -114,6 +106,6 @@ let showAnswer = () => {
     } else {
         answerOption.classList.add("wrong-answer");
     }
-}
+}*/
 
 startGame();
